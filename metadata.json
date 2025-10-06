@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Mememint",
+  "description": "Generate expressive GIFs, thumbnails, and viral content in one click.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

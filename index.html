@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E293B'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-size='60' font-family='-apple-system, BlinkMacSystemFont, sans-serif' font-weight='bold' fill='%23FFFFFF'>M</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mememint - GIF Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/gifshot@0.3.2/build/gifshot.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0"
+  }
+}
+</script>
+<style>
+  /* Remove default browser focus outline */
+  *:focus {
+    outline: none;
+  }
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+   @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.2s ease-out;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -7px; /* centers thumb on the track */
+    height: 16px;
+    width: 16px;
+    border-radius: 9999px;
+    background-color: #3b82f6;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+  }
+  input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 9999px;
+    background-color: #3b82f6;
+    border: 2px solid #fff;
+    cursor: pointer;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
